@@ -75,7 +75,7 @@ def getMaxFlow(grid, n, player):
     # create graph
     for i in range(n):
         for j in range(n):
-            dinic.add_edge(nodeEntry(i, j), nodeExit(i, j), 1)
+            dinic.add_edge(nodeEntry(i, j), nodeExit(i, j), 1) # create 2 nodes within each hexagon and connect them with a capacity of 1 (so each hexagon may only allow 1 unit to flow through)
             if grid[i][j] == player:
                 for ii, jj in ((i - 1, j), (i - 1, j + 1), (i, j - 1), 
                                (i, j + 1), (i + 1, j - 1), (i + 1, j)):
